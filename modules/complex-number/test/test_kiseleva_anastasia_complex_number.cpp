@@ -35,7 +35,7 @@ TEST(Kiseleva_Anastasia_ComplexNumberTest, Abs_Of_Conjugate_Numbers) {
 
 TEST(Kiseleva_Anastasia_ComplexNumberTest, Division_Of_Conjugate_Numbers) {
     double re = -4.3;
-    double im = 0.75;   
+    double im = 0.75;
     double re2 = 7.0;
     double im2 = 5.2;
 
