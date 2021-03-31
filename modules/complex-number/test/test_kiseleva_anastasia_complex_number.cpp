@@ -17,10 +17,10 @@ TEST(Kiseleva_Anastasia_ComplexNumberTest, Subtraction_Property) {
     ComplexNumber res = z - conj_z;
     ComplexNumber Res(0.0, 2*im);
 
-    EXPECT_EQ(res, Res);
+    ASSERT_EQ(res, Res);
 }
 
-TEST(Kiseleva_Anastasia_ComplexNumberTest, Abs_Of_Conjugate_Numbers) {
+TEST(Kiseleva_Anastasia_ComplexNumberTest, Abs_Of_Conjugate_Numbers_Minus) {
     double re = 5.7;
     double im = 11.2;
 
@@ -30,7 +30,9 @@ TEST(Kiseleva_Anastasia_ComplexNumberTest, Abs_Of_Conjugate_Numbers) {
     double abs1 = std::sqrt(z.getRe()* z.getRe()+z.getIm()* z.getIm());
     double abs2 = std::sqrt(z2.getRe() * z2.getRe() + z2.getIm() * z2.getIm());
 
-    EXPECT_EQ(abs1, abs2);
+    double res = abs1 - abs2;
+
+    ASSERT_EQ(0.0, res);
 }
 
 TEST(Kiseleva_Anastasia_ComplexNumberTest, Division_Of_Conjugate_Numbers) {
@@ -51,7 +53,5 @@ TEST(Kiseleva_Anastasia_ComplexNumberTest, Division_Of_Conjugate_Numbers) {
     double imd = div.getIm() * -1;
     div.setIm(imd);
 
-    EXPECT_EQ(div_conj, div);
+    ASSERT_EQ(div_conj, div);
 }
-
-
