@@ -55,4 +55,3 @@ TEST(Kiseleva_Anastasia_ComplexNumberTest, Division_Of_Conjugate_Numbers) {
 
     ASSERT_EQ(div_conj, div);
 }
-
