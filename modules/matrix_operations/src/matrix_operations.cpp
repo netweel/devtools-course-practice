@@ -18,6 +18,8 @@ Matrix::Matrix(unsigned int row, unsigned int col) {
     }
 }
 
+Matrix::~Matrix() {}
+
 Matrix::Matrix(const Matrix& tmp) {
     rows = tmp.rows;
     cols = tmp.cols;
