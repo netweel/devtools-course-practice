@@ -29,7 +29,6 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Set_data__brackets__comparison) {
 
     two.set_data({ {4, 5}, {1, -1} });
     res = (one == two);
-    one.~Matrix();
     ASSERT_TRUE(res);
 }
 

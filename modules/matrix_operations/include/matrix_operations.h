@@ -18,8 +18,6 @@ class Matrix {
  public:
     Matrix(unsigned int row, unsigned int col);
 
-    ~Matrix() {}
-
     Matrix(const Matrix& tmp);
 
     void set_data(std::vector < std::vector < double>> new_data);
