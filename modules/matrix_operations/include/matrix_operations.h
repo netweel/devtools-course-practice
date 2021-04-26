@@ -20,7 +20,7 @@ class Matrix {
 
     Matrix(const Matrix& tmp);
 
-    ~Matrix() {}
+    ~Matrix() = default;
 
     void set_data(std::vector < std::vector < double>> new_data);
 
