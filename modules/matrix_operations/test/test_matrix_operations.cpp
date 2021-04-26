@@ -294,7 +294,8 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Inverse_matrix) {
     Matrix res(3, 3);
 
     one.set_data({ { 1, 4, -2 }, { 5, 2, 3 }, { 2, 7, 2 } });
-    expected.set_data({ { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }, { 0.0, 0.0, 1.0 } });
+    expected.set_data({ { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 },
+        { 0.0, 0.0, 1.0 } });
     two = one;
 
     one.Inverse();
