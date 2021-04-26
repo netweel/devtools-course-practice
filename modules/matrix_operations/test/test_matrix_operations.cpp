@@ -93,30 +93,30 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Equality_of_two_matrices) {
 TEST(KISELEVA_MATRIX_OPERATIONS, Multiplication_of_two_matrices) {
     Matrix one(2, 3);
     Matrix two(3, 2);
-    Matrix exept(2, 2);
+    Matrix expected(2, 2);
     Matrix res(2, 2);
 
     one.set_data({ {1, 2, 1}, {4, 1, 2} });
     two.set_data({ {2, 2}, {1, 5}, {0, 4} });
-    exept.set_data({ {4, 16}, {9, 21} });
+    expected.set_data({ {4, 16}, {9, 21} });
 
     res = one * two;
 
-    ASSERT_EQ(exept, res);
+    ASSERT_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Multiplication_of_double_and_matrix) {
     Matrix one(2, 3);
-    Matrix exept(2, 3);
+    Matrix expected(2, 3);
     double tmp = 3;
     Matrix res(2, 3);
 
     one.set_data({ {1, 2, 1}, {4, 1, 2} });
-    exept.set_data({ {3, 6, 3}, {12, 3, 6} });
+    expected.set_data({ {3, 6, 3}, {12, 3, 6} });
 
     res = one * tmp;
 
-    ASSERT_EQ(exept, res);
+    ASSERT_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Multiplication_of_vector_and_matrix_THROW) {
@@ -130,30 +130,30 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Multiplication_of_vector_and_matrix_THROW) {
 TEST(KISELEVA_MATRIX_OPERATIONS, Multiplication_of_vector_and_matrix) {
     Matrix one(2, 3);
     std::vector<double> two(3);
-    std::vector<double> exept(2);
+    std::vector<double> expected(2);
     std::vector<double> res(2);
 
     one.set_data({ {1, 2, 1}, {4, 1, 2} });
     two = { 3, 2, -2 };
-    exept = { 5, 10 };
+    expected = { 5, 10 };
 
     res = one * two;
 
-    ASSERT_EQ(exept, res);
+    ASSERT_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Division_of_double_and_matrix) {
     Matrix one(2, 3);
-    Matrix exept(2, 3);
+    Matrix expected(2, 3);
     double tmp = 3;
     Matrix res(2, 3);
 
-    exept.set_data({ {1, 2, 1}, {4, 1, 2} });
+    expected.set_data({ {1, 2, 1}, {4, 1, 2} });
     one.set_data({ {3, 6, 3}, {12, 3, 6} });
 
     res = one / tmp;
 
-    ASSERT_EQ(exept, res);
+    ASSERT_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Sum_of_two_matrix_THROW) {
@@ -168,15 +168,15 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Sum_of_two_matrix) {
     Matrix one(2, 3);
     Matrix res(2, 3);
     Matrix two(2, 3);
-    Matrix exept(2, 3);
+    Matrix expected(2, 3);
 
     one.set_data({ {1, 2, 1}, {4, 1, 2} });
     two.set_data({ {3, 6, 3}, {12, 3, 6} });
-    exept.set_data({ {4, 8, 4}, {16, 4, 8} });
+    expected.set_data({ {4, 8, 4}, {16, 4, 8} });
 
     res = one + two;
 
-    ASSERT_EQ(exept, res);
+    ASSERT_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Subtraction_of_two_matrix_THROW) {
@@ -191,41 +191,41 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Subtraction_of_two_matrix) {
     Matrix one(2, 3);
     Matrix res(2, 3);
     Matrix two(2, 3);
-    Matrix exept(2, 3);
+    Matrix expected(2, 3);
 
     one.set_data({ {1, 2, 1}, {4, 1, 2} });
     two.set_data({ {3, 6, 3}, {12, 3, 6} });
-    exept.set_data({ {-2, -4, -2}, {-8, -2, -4} });
+    expected.set_data({ {-2, -4, -2}, {-8, -2, -4} });
 
     res = one - two;
 
-    ASSERT_EQ(exept, res);
+    ASSERT_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Transpose_of_matrix) {
     Matrix one(2, 3);
     Matrix res(3, 2);
-    Matrix exept(3, 2);
+    Matrix expected(3, 2);
 
     one.set_data({ {1, 2, 1}, {4, 1, 2} });
-    exept.set_data({ {1, 4}, {2, 1}, {1, 2} });
+    expected.set_data({ {1, 4}, {2, 1}, {1, 2} });
 
-    res = one.Transpose();
+    res = one.Get_Transpose();
 
-    ASSERT_EQ(exept, res);
+    ASSERT_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Get_Matrix_Without_i_row_j_col) {
     Matrix one(3, 3);
-    Matrix exept(2, 2);
+    Matrix expected(2, 2);
     Matrix res(2, 2);
 
     one.set_data({ { 1, 1, 1 }, { 2, 2, 2 }, { 3, 3, 3 } });
-    exept.set_data({ {2, 2}, {3, 3} });
+    expected.set_data({ {2, 2}, {3, 3} });
 
-    res = one.GetMatrWithout_i_row_j_cols(0, 0);
+    res = one.GetMatrWithout_i_row_j_col(0, 0);
 
-    ASSERT_EQ(exept, res);
+    ASSERT_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Determinant_THROW) {
@@ -236,41 +236,41 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Determinant_THROW) {
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Determinant_of_1x1) {
     Matrix one(1, 1);
-    double exept;
+    double expected;
     double res;
 
     one.set_data({ {1} });
-    exept = 1;
+    expected = 1;
 
     res = one.Determinant();
 
-    ASSERT_DOUBLE_EQ(exept, res);
+    ASSERT_DOUBLE_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Determinant_of_2x2) {
     Matrix one(2, 2);
-    double exept;
+    double expected;
     double res;
 
     one.set_data({ {1, 2}, {1, -3} });
-    exept = -5;
+    expected = -5;
 
     res = one.Determinant();
 
-    ASSERT_DOUBLE_EQ(exept, res);
+    ASSERT_DOUBLE_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Determinant_of_3x3) {
     Matrix one(3, 3);
-    double exept;
+    double expected;
     double res;
 
     one.set_data({ { 1, -2, 0 }, { 4, 5, 6 }, { 1, 2, 7 } });
-    exept = 67;
+    expected = 67;
 
     res = one.Determinant();
 
-    ASSERT_DOUBLE_EQ(exept, res);
+    ASSERT_DOUBLE_EQ(expected, res);
 }
 
 TEST(KISELEVA_MATRIX_OPERATIONS, Inverse_THROW_1) {
@@ -290,11 +290,11 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Inverse_THROW_2) {
 TEST(KISELEVA_MATRIX_OPERATIONS, Inverse_matrix) {
     Matrix one(3, 3);
     Matrix two(3, 3);
-    Matrix exept(3, 3);
+    Matrix expected(3, 3);
     Matrix res(3, 3);
 
     one.set_data({ { 1, 4, -2 }, { 5, 2, 3 }, { 2, 7, 2 } });
-    exept.set_data({ { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }, { 0.0, 0.0, 1.0 } });
+    expected.set_data({ { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }, { 0.0, 0.0, 1.0 } });
     two = one;
 
     one.Inverse();
@@ -302,7 +302,7 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Inverse_matrix) {
 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            ASSERT_NEAR(exept[i][j], res[i][j], EPSILON);
+            ASSERT_NEAR(expected[i][j], res[i][j], EPSILON);
         }
     }
 }

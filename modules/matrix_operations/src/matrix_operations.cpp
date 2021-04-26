@@ -143,7 +143,7 @@ void Matrix::set_data(std::vector < std::vector < double>> new_data) {
     cols = data[0].size();
 }
 
-Matrix Matrix::Transpose() {
+Matrix Matrix::Get_Transpose() {
     Matrix res(cols, rows);
     for (unsigned int i = 0; i < rows; i++) {
         for (unsigned int j = 0; j < cols; j++) {
@@ -165,7 +165,7 @@ int Matrix::Get_Cols() {
     return cols;
 }
 
-Matrix Matrix::GetMatrWithout_i_row_j_cols(unsigned int i, unsigned int j) {
+Matrix Matrix::GetMatrWithout_i_row_j_col(unsigned int i, unsigned int j) {
     Matrix res(rows - 1, rows - 1);
     unsigned int ki, kj, di;
     di = 0;
@@ -200,7 +200,7 @@ double Matrix::Determinant() {
         if (rows > 2) {
             for (unsigned int i = 0; i < rows; i++) {
                 Matrix c(rows - 1, rows - 1);
-                c = this->GetMatrWithout_i_row_j_cols(i, 0);
+                c = this->GetMatrWithout_i_row_j_col(i, 0);
                 res = res + k * data[i][0] * c.Determinant();
                 k = -k;
             }
@@ -216,12 +216,12 @@ void Matrix::Inverse() {
         double deter = this->Determinant();
         if (deter != 0) {
             Matrix transp(rows, rows);
-            transp = this->Transpose();
+            transp = this->Get_Transpose();
             Matrix allied(rows, rows);
             Matrix c(rows - 1, rows - 1);
             for (unsigned int i = 0; i < rows; i++) {
                 for (unsigned int j = 0; j < rows; j++) {
-                    c = transp.GetMatrWithout_i_row_j_cols(i, j);
+                    c = transp.GetMatrWithout_i_row_j_col(i, j);
                     if ((j + i + 1) % 2 == 0) {
                         allied[i][j] = c.Determinant() * (-1);
                     } else {

@@ -14,7 +14,6 @@ class Matrix {
 
     std::vector<std::vector<double>> data;
 
-
  public:
     Matrix(unsigned int row, unsigned int col);
 
@@ -22,7 +21,7 @@ class Matrix {
 
     ~Matrix();
 
-    void set_data(std::vector < std::vector < double>> new_data);
+    void set_data(std::vector<std::vector< double>> new_data);
 
     std::vector<double>& operator[](unsigned int k);
 
@@ -46,9 +45,9 @@ class Matrix {
 
     int Get_Cols();
 
-    Matrix Transpose();
+    Matrix Get_Transpose();
 
-    Matrix GetMatrWithout_i_row_j_cols(unsigned int i, unsigned int j);
+    Matrix GetMatrWithout_i_row_j_col(unsigned int i, unsigned int j);
 
     double Determinant();
 
