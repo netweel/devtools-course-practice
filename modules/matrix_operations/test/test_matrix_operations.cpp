@@ -17,6 +17,10 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Size_zero) {
     ASSERT_ANY_THROW(Matrix(0, 3));
 }
 
+TEST(KISELEVA_MATRIX_OPERATIONS, Size_norm) {
+    ASSERT_NO_THROW(Matrix(3, 3));
+}
+
 TEST(KISELEVA_MATRIX_OPERATIONS, Set_data__brackets__comparison) {
     Matrix one(2, 2);
     Matrix two(2, 2);
