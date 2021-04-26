@@ -20,8 +20,6 @@ class Matrix {
 
     Matrix(const Matrix& tmp);
 
-    ~Matrix() = default;
-
     void set_data(std::vector < std::vector < double>> new_data);
 
     std::vector<double>& operator[](unsigned int k);
