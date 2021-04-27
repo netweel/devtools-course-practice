@@ -80,7 +80,7 @@ std::vector<double> Matrix::operator*(const std::vector<double>& tmp) const {
     return res;
 }
 
-Matrix Matrix::operator+(const Matrix& A) const{
+Matrix Matrix::operator+(const Matrix& A) const {
     Matrix res(rows, cols);
     if ((rows == A.rows) && (cols == A.cols)) {
         for (unsigned int i = 0; i < rows; i++) {
@@ -166,7 +166,8 @@ int Matrix::Get_Cols() const {
     return cols;
 }
 
-Matrix Matrix::GetMatrWithout_i_row_j_col(unsigned int i, unsigned int j) const {
+Matrix Matrix::GetMatrWithout_i_row_j_col(unsigned int i,
+    unsigned int j) const {
     Matrix res(rows - 1, rows - 1);
     unsigned int ki, kj, di;
     di = 0;
