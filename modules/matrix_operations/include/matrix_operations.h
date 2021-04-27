@@ -37,7 +37,7 @@ class Matrix {
 
     Matrix operator-(const Matrix& A);
 
-    Matrix* operator=(const Matrix& A);
+    Matrix& operator=(const Matrix& A);
 
     bool operator==(const Matrix& tmp) const;
 

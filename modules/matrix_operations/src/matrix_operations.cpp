@@ -108,12 +108,12 @@ Matrix Matrix::operator-(const Matrix& A) {
     return res;
 }
 
-Matrix* Matrix::operator=(const Matrix& A) {
-    if (this == &A) return this;
+Matrix& Matrix::operator=(const Matrix& A) {
+    if (this == &A) return *this;
     rows = A.rows;
     cols = A.cols;
     data = A.data;
-    return this;
+    return *this;
 }
 
 bool Matrix::operator==(const Matrix& tmp) const {
