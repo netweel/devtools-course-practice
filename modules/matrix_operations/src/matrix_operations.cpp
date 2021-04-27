@@ -94,7 +94,7 @@ Matrix Matrix::operator+(const Matrix& A) const {
     return res;
 }
 
-Matrix Matrix::operator-(const Matrix& A) {
+Matrix Matrix::operator-(const Matrix& A) const {
     Matrix res(rows, cols);
     if ((rows == A.rows) && (cols == A.cols)) {
         for (unsigned int i = 0; i < rows; i++) {
