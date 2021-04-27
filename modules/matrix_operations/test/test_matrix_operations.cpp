@@ -42,6 +42,17 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Set_data__brackets__comparison) {
     ASSERT_TRUE(res);
 }
 
+TEST(KISELEVA_MATRIX_OPERATIONS, Equality_of_two_equal_matrices) {
+    Matrix one(2, 3);
+    Matrix two(2, 3);
+
+    one.set_data({ {1, 2, 1}, {4, 1, 2} });
+    two.set_data({ {1, 2, 1}, {4, 1, 2} });
+    two = one;
+
+    ASSERT_EQ(one, two);
+}
+
 TEST(KISELEVA_MATRIX_OPERATIONS, Comparison_FALSE_1) {
     Matrix one(2, 3);
     Matrix two(2, 2);
@@ -90,6 +101,7 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Equality_of_two_matrices) {
 
     ASSERT_EQ(one, two);
 }
+
 TEST(KISELEVA_MATRIX_OPERATIONS, Multiplication_of_two_matrices) {
     Matrix one(2, 3);
     Matrix two(3, 2);

@@ -21,35 +21,35 @@ class Matrix {
 
     ~Matrix();
 
-    void set_data(std::vector<std::vector< double>> new_data);
+    void set_data(const std::vector<std::vector< double>>& new_data);
 
     std::vector<double>& operator[](unsigned int k);
 
-    Matrix operator*(Matrix A);
+    Matrix operator*(const Matrix& A) const;
 
-    Matrix operator* (double tmp);
+    Matrix operator* (const double tmp) const;
 
-    Matrix operator/ (double tmp);
+    Matrix operator/ (const double tmp) const;
 
-    std::vector<double> operator*(std::vector<double> tmp);
+    std::vector<double> operator*(const std::vector<double>& tmp) const;
 
-    Matrix operator+(Matrix A);
+    Matrix operator+(const Matrix& A) const;
 
-    Matrix operator-(Matrix A);
+    Matrix operator-(const Matrix& A);
 
-    Matrix* operator=(Matrix A);
+    Matrix* operator=(const Matrix& A);
 
     bool operator==(const Matrix& tmp) const;
 
-    int Get_Rows();
+    int Get_Rows() const;
 
-    int Get_Cols();
+    int Get_Cols() const;
 
-    Matrix Get_Transpose();
+    Matrix Get_Transpose() const;
 
-    Matrix GetMatrWithout_i_row_j_col(unsigned int i, unsigned int j);
+    Matrix GetMatrWithout_i_row_j_col(unsigned int i, unsigned int j) const;
 
-    double Determinant();
+    double Determinant() const;
 
     void Inverse();
 };

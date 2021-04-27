@@ -26,7 +26,7 @@ Matrix::Matrix(const Matrix& tmp) {
     data = tmp.data;
 }
 
-Matrix Matrix::operator*(Matrix A) {
+Matrix Matrix::operator*(const Matrix& A) const {
     Matrix res(rows, A.cols);
     if (cols == A.rows) {
         for (unsigned int i = 0; i < rows; i++) {
@@ -44,7 +44,7 @@ Matrix Matrix::operator*(Matrix A) {
     return res;
 }
 
-Matrix Matrix::operator* (double tmp) {
+Matrix Matrix::operator* (const double tmp) const {
     Matrix res(rows, cols);
     for (unsigned int i = 0; i < rows; i++) {
         for (unsigned int j = 0; j < cols; j++) {
@@ -54,7 +54,7 @@ Matrix Matrix::operator* (double tmp) {
     return res;
 }
 
-Matrix Matrix::operator/ (double tmp) {
+Matrix Matrix::operator/ (const double tmp) const {
     Matrix res(rows, cols);
     for (unsigned int i = 0; i < rows; i++) {
         for (unsigned int j = 0; j < cols; j++) {
@@ -64,7 +64,7 @@ Matrix Matrix::operator/ (double tmp) {
     return res;
 }
 
-std::vector<double> Matrix::operator*(std::vector<double> tmp) {
+std::vector<double> Matrix::operator*(const std::vector<double>& tmp) const {
     std::vector<double> res(rows);
     if (tmp.size() == cols) {
         for (unsigned int i = 0; i < rows; i++) {
@@ -80,7 +80,7 @@ std::vector<double> Matrix::operator*(std::vector<double> tmp) {
     return res;
 }
 
-Matrix Matrix::operator+(Matrix A) {
+Matrix Matrix::operator+(const Matrix& A) const{
     Matrix res(rows, cols);
     if ((rows == A.rows) && (cols == A.cols)) {
         for (unsigned int i = 0; i < rows; i++) {
@@ -94,7 +94,7 @@ Matrix Matrix::operator+(Matrix A) {
     return res;
 }
 
-Matrix Matrix::operator-(Matrix A) {
+Matrix Matrix::operator-(const Matrix& A) {
     Matrix res(rows, cols);
     if ((rows == A.rows) && (cols == A.cols)) {
         for (unsigned int i = 0; i < rows; i++) {
@@ -108,7 +108,8 @@ Matrix Matrix::operator-(Matrix A) {
     return res;
 }
 
-Matrix* Matrix::operator=(Matrix A) {
+Matrix* Matrix::operator=(const Matrix& A) {
+    if (this == &A) return this;
     rows = A.rows;
     cols = A.cols;
     data = A.data;
@@ -137,13 +138,13 @@ std::vector<double>& Matrix::operator[](unsigned int k) {
     }
 }
 
-void Matrix::set_data(std::vector < std::vector < double>> new_data) {
+void Matrix::set_data(const std::vector < std::vector < double>>& new_data) {
     data = new_data;
     rows = data.size();
     cols = data[0].size();
 }
 
-Matrix Matrix::Get_Transpose() {
+Matrix Matrix::Get_Transpose() const {
     Matrix res(cols, rows);
     for (unsigned int i = 0; i < rows; i++) {
         for (unsigned int j = 0; j < cols; j++) {
@@ -157,15 +158,15 @@ Matrix Matrix::Get_Transpose() {
     return res;
 }
 
-int Matrix::Get_Rows() {
+int Matrix::Get_Rows() const {
     return rows;
 }
 
-int Matrix::Get_Cols() {
+int Matrix::Get_Cols() const {
     return cols;
 }
 
-Matrix Matrix::GetMatrWithout_i_row_j_col(unsigned int i, unsigned int j) {
+Matrix Matrix::GetMatrWithout_i_row_j_col(unsigned int i, unsigned int j) const {
     Matrix res(rows - 1, rows - 1);
     unsigned int ki, kj, di;
     di = 0;
@@ -184,7 +185,7 @@ Matrix Matrix::GetMatrWithout_i_row_j_col(unsigned int i, unsigned int j) {
     return res;
 }
 
-double Matrix::Determinant() {
+double Matrix::Determinant() const {
     if (rows == cols) {
         int k;
         double res = 0.0;
