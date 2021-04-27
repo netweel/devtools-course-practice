@@ -53,6 +53,16 @@ TEST(KISELEVA_MATRIX_OPERATIONS, Equality_of_two_equal_matrices) {
     ASSERT_EQ(one, two);
 }
 
+TEST(KISELEVA_MATRIX_OPERATIONS, Constr) {
+    Matrix one(2, 3);
+
+    one.set_data({ {1, 2, 1}, {4, 1, 2} });
+
+    Matrix two(one);
+
+    ASSERT_EQ(one, two);
+}
+
 TEST(KISELEVA_MATRIX_OPERATIONS, Comparison_FALSE_1) {
     Matrix one(2, 3);
     Matrix two(2, 2);
