@@ -28,7 +28,8 @@ void Application::help(const char* appname, const char* message) {
         "<int count of corners>\n" +
         "Pyramid <int x> <int y> <int z> <double side> <double hight>"+
         "<int count of corners>\n" +
-        "Frustum <int x> <int y> <int z> <double top radius> <double radiust> <double hight>\n" +
+        "Frustum <int x> <int y> <int z> <double top radius>"+
+        "<double radiust> <double hight>\n" +
         "Torus <int x> <int y> <int z> <double center to axis> <radius>\n";
 }
 
