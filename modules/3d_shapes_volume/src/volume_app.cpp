@@ -22,9 +22,12 @@ void Application::help(const char* appname, const char* message) {
         "Cube <int x> <int y> <int z> <double side> \n" +
         "Sphere <int x> <int y> <int z> <double radius>\n" +
         "Cone <int x> <int y> <int z> <double radius> <double hight>\n" +
-        "Parallelepiped <int x> <int y> <int z> <double side1> <double side2> <double hight>\n" +
-        "Prism <int x> <int y> <int z> <double side> <double hight> <int count of corners>\n" +
-        "Pyramid <int x> <int y> <int z> <double side> <double hight> <int count of corners>\n" +
+        "Parallelepiped <int x> <int y> <int z>"+
+        "<double side1> <double side2> <double hight>\n" +
+        "Prism <int x> <int y> <int z> <double side> <double hight>"+
+        "<int count of corners>\n" +
+        "Pyramid <int x> <int y> <int z> <double side> <double hight>"+
+        "<int count of corners>\n" +
         "Frustum <int x> <int y> <int z> <double top radius> <double radiust> <double hight>\n" +
         "Torus <int x> <int y> <int z> <double center to axis> <radius>\n";
 }
