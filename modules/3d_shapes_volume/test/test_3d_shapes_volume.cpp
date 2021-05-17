@@ -4,7 +4,7 @@
 #include "include/3d_shapes_volume.h"
 
 TEST(PANOVA_SHAPES_VOLUME, Cubee) {
-    ASSERT_NO_THROW(Cube v = Cube(0, 0, 0, 3));
+    ASSERT_NO_THROW(Cube(0, 0, 0, 3));
 }
 
 TEST(PANOVA_SHAPES_VOLUME, Cube_Wrong_Data) {
