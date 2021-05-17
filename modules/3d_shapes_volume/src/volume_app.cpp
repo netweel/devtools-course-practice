@@ -109,7 +109,7 @@ std::string Application::operator()(int argc, const char** argv) {
     }
     }
     catch (...) {
-       return message_ = "invalid arg";
         help(argv[0]);
+       return message_ = "invalid arg";
     }
 }
