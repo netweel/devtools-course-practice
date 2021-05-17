@@ -128,7 +128,7 @@ TEST(test_app, cube) {
     Application app;
 
     std::string res = app(argc, argv.data());
-    std::string correct = "8.000000";
+    const std::string correct = "8.000000";
 
     ASSERT_EQ(correct, res);
 }
@@ -139,7 +139,7 @@ TEST(test_app, sphere) {
     Application app;
 
     std::string res = app(argc, argv.data());
-    std::string correct = "523.598776";
+    const std::string correct = "523.598776";
 
     ASSERT_EQ(correct, res);
 }
@@ -150,7 +150,7 @@ TEST(test_app, cone) {
     Application app;
 
     std::string res = app(argc, argv.data());
-    std::string correct = "209.439510";
+    const std::string correct = "209.439510";
 
     ASSERT_EQ(correct, res);
 }
@@ -164,7 +164,7 @@ TEST(test_app, parallelepiped) {
 
     std::string res = app(argc, argv.data());
     double voll = 10 * 10 * 5;
-    std::string correct = std::to_string(voll);
+    const std::string correct = std::to_string(voll);
 
     ASSERT_EQ(correct, res);
 }
@@ -176,7 +176,7 @@ TEST(test_app, prism) {
     Application app;
 
     std::string res = app(argc, argv.data());
-    std::string correct = "0.806403";
+    const std::string correct = "0.806403";
 
     ASSERT_EQ(correct, res);
 }
@@ -188,7 +188,7 @@ TEST(test_app, pyramid) {
     Application app;
 
     std::string res = app(argc, argv.data());
-    std::string correct =  "7.811514";
+    const std::string correct =  "7.811514";
 
     ASSERT_EQ(correct, res);
 }
@@ -200,7 +200,7 @@ TEST(test_app, torus) {
     Application app;
 
     std::string res = app(argc, argv.data());
-    std::string correct = "98.696044";
+    const std::string correct = "98.696044";
 
     ASSERT_EQ(correct, res);
 }
@@ -212,7 +212,7 @@ TEST(test_app, frustum) {
     Application app;
 
     std::string res = app(argc, argv.data());
-    std::string correct = "175.929189";
+    const std::string correct = "175.929189";
 
     ASSERT_EQ(correct, res);
 }
