@@ -21,6 +21,14 @@ set_tests_properties (${prefix}_empty_args PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
+    NAME ${prefix}_invalid_type
+    COMMAND ${APPLICATION} Cure 0 2 5 0
+)
+set_tests_properties (${prefix}_invalid_type PROPERTIES
+    PASS_REGULAR_EXPRESSION "wrong type of figure"
+    LABELS "${MODULE}")
+
+add_test(
     NAME ${prefix}_invalid_args
     COMMAND ${APPLICATION} Cube aa 2 5 0
 )

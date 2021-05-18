@@ -112,5 +112,5 @@ std::string Application::operator()(int argc, const char** argv) {
         help(argv[0]);
        return message_ = "invalid arg";
     }
-    return message_;
+    return message_="wrong type of figure";
 }

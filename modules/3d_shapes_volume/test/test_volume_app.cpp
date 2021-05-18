@@ -20,6 +20,17 @@ TEST(test_app, empty_args) {
     ASSERT_NO_THROW(app(argc, argv.data()));
 }
 
+TEST(test_app, invalid_type) {
+    std::vector<const char*> argv = { "app", "Cure", "0", "2", "5", "0" };
+    const int argc = argv.size();
+    Application app;
+
+    std::string res = app(argc, argv.data());
+    const std::string correct = "wrong type of figure";
+
+    ASSERT_EQ(correct, res);
+}
+
 TEST(test_app, invalid_args) {
     std::vector<const char*> argv = { "app", "Cube", "aa", "2", "5", "0" };
     const int argc = argv.size();
